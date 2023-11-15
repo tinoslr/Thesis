@@ -1,55 +1,105 @@
-PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
-64 bytes from 192.168.0.1: icmp_seq=1 ttl=63 time=1.36 ms
-64 bytes from 192.168.0.1: icmp_seq=2 ttl=63 time=0.610 ms
-64 bytes from 192.168.0.1: icmp_seq=3 ttl=63 time=0.659 ms
-64 bytes from 192.168.0.1: icmp_seq=4 ttl=63 time=0.712 ms
-64 bytes from 192.168.0.1: icmp_seq=5 ttl=63 time=0.803 ms
-64 bytes from 192.168.0.1: icmp_seq=6 ttl=63 time=0.936 ms
-64 bytes from 192.168.0.1: icmp_seq=7 ttl=63 time=1.74 ms
-64 bytes from 192.168.0.1: icmp_seq=8 ttl=63 time=1.60 ms
-64 bytes from 192.168.0.1: icmp_seq=9 ttl=63 time=1.61 ms
-64 bytes from 192.168.0.1: icmp_seq=10 ttl=63 time=1.65 ms
-64 bytes from 192.168.0.1: icmp_seq=11 ttl=63 time=0.622 ms
-64 bytes from 192.168.0.1: icmp_seq=12 ttl=63 time=0.986 ms
-64 bytes from 192.168.0.1: icmp_seq=13 ttl=63 time=0.694 ms
-64 bytes from 192.168.0.1: icmp_seq=14 ttl=63 time=1.11 ms
-64 bytes from 192.168.0.1: icmp_seq=15 ttl=63 time=0.598 ms
-64 bytes from 192.168.0.1: icmp_seq=16 ttl=63 time=1.29 ms
-64 bytes from 192.168.0.1: icmp_seq=17 ttl=63 time=1.55 ms
-64 bytes from 192.168.0.1: icmp_seq=18 ttl=63 time=1.33 ms
-64 bytes from 192.168.0.1: icmp_seq=19 ttl=63 time=0.983 ms
-64 bytes from 192.168.0.1: icmp_seq=20 ttl=63 time=0.623 ms
-64 bytes from 192.168.0.1: icmp_seq=21 ttl=63 time=1.21 ms
-64 bytes from 192.168.0.1: icmp_seq=22 ttl=63 time=0.829 ms
-64 bytes from 192.168.0.1: icmp_seq=23 ttl=63 time=1.49 ms
-64 bytes from 192.168.0.1: icmp_seq=24 ttl=63 time=1.60 ms
-64 bytes from 192.168.0.1: icmp_seq=25 ttl=63 time=0.650 ms
-64 bytes from 192.168.0.1: icmp_seq=26 ttl=63 time=1.55 ms
-64 bytes from 192.168.0.1: icmp_seq=27 ttl=63 time=0.658 ms
-64 bytes from 192.168.0.1: icmp_seq=28 ttl=63 time=1.60 ms
-64 bytes from 192.168.0.1: icmp_seq=29 ttl=63 time=0.773 ms
-64 bytes from 192.168.0.1: icmp_seq=30 ttl=63 time=0.759 ms
-64 bytes from 192.168.0.1: icmp_seq=31 ttl=63 time=0.697 ms
-64 bytes from 192.168.0.1: icmp_seq=32 ttl=63 time=0.769 ms
-64 bytes from 192.168.0.1: icmp_seq=33 ttl=63 time=0.855 ms
-64 bytes from 192.168.0.1: icmp_seq=34 ttl=63 time=0.832 ms
-64 bytes from 192.168.0.1: icmp_seq=35 ttl=63 time=0.862 ms
-64 bytes from 192.168.0.1: icmp_seq=36 ttl=63 time=0.860 ms
-64 bytes from 192.168.0.1: icmp_seq=37 ttl=63 time=0.899 ms
-64 bytes from 192.168.0.1: icmp_seq=38 ttl=63 time=0.625 ms
-64 bytes from 192.168.0.1: icmp_seq=39 ttl=63 time=1.06 ms
-64 bytes from 192.168.0.1: icmp_seq=40 ttl=63 time=1.61 ms
-64 bytes from 192.168.0.1: icmp_seq=41 ttl=63 time=0.617 ms
-64 bytes from 192.168.0.1: icmp_seq=42 ttl=63 time=1.09 ms
-64 bytes from 192.168.0.1: icmp_seq=43 ttl=63 time=0.679 ms
-64 bytes from 192.168.0.1: icmp_seq=44 ttl=63 time=1.25 ms
-64 bytes from 192.168.0.1: icmp_seq=45 ttl=63 time=1.56 ms
-64 bytes from 192.168.0.1: icmp_seq=46 ttl=63 time=0.760 ms
-64 bytes from 192.168.0.1: icmp_seq=47 ttl=63 time=1.45 ms
-64 bytes from 192.168.0.1: icmp_seq=48 ttl=63 time=1.55 ms
-64 bytes from 192.168.0.1: icmp_seq=49 ttl=63 time=0.704 ms
-64 bytes from 192.168.0.1: icmp_seq=50 ttl=63 time=1.39 ms
+PING www.google.com (172.217.16.196) 56(84) bytes of data.
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=1 ttl=114 time=22.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=2 ttl=114 time=19.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=3 ttl=114 time=26.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=4 ttl=114 time=19.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=5 ttl=114 time=17.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=6 ttl=114 time=18.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=7 ttl=114 time=17.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=8 ttl=114 time=20.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=9 ttl=114 time=18.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=10 ttl=114 time=16.8 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=11 ttl=114 time=18.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=12 ttl=114 time=22.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=13 ttl=114 time=16.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=14 ttl=114 time=17.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=15 ttl=114 time=19.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=16 ttl=114 time=18.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=17 ttl=114 time=17.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=18 ttl=114 time=15.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=19 ttl=114 time=16.8 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=20 ttl=114 time=17.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=21 ttl=114 time=16.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=22 ttl=114 time=17.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=23 ttl=114 time=18.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=24 ttl=114 time=26.8 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=25 ttl=114 time=17.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=26 ttl=114 time=17.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=27 ttl=114 time=17.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=28 ttl=114 time=25.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=29 ttl=114 time=17.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=30 ttl=114 time=17.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=31 ttl=114 time=16.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=32 ttl=114 time=17.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=33 ttl=114 time=17.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=34 ttl=114 time=27.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=35 ttl=114 time=17.8 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=36 ttl=114 time=16.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=37 ttl=114 time=21.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=38 ttl=114 time=17.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=39 ttl=114 time=30.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=40 ttl=114 time=18.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=41 ttl=114 time=26.8 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=42 ttl=114 time=22.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=43 ttl=114 time=24.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=44 ttl=114 time=34.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=45 ttl=114 time=23.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=46 ttl=114 time=24.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=47 ttl=114 time=25.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=48 ttl=114 time=28.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=49 ttl=114 time=22.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=50 ttl=114 time=21.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=51 ttl=114 time=21.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=52 ttl=114 time=21.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=53 ttl=114 time=22.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=54 ttl=114 time=33.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=55 ttl=114 time=24.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=56 ttl=114 time=22.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=57 ttl=114 time=22.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=58 ttl=114 time=24.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=59 ttl=114 time=20.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=60 ttl=114 time=20.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=61 ttl=114 time=20.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=62 ttl=114 time=21.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=63 ttl=114 time=19.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=64 ttl=114 time=18.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=65 ttl=114 time=18.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=66 ttl=114 time=18.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=67 ttl=114 time=17.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=68 ttl=114 time=20.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=69 ttl=114 time=19.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=70 ttl=114 time=18.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=71 ttl=114 time=21.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=72 ttl=114 time=20.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=73 ttl=114 time=17.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=74 ttl=114 time=23.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=75 ttl=114 time=18.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=76 ttl=114 time=18.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=77 ttl=114 time=22.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=78 ttl=114 time=17.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=79 ttl=114 time=16.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=80 ttl=114 time=20.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=81 ttl=114 time=20.5 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=82 ttl=114 time=16.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=83 ttl=114 time=22.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=84 ttl=114 time=19.6 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=85 ttl=114 time=17.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=86 ttl=114 time=22.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=87 ttl=114 time=18.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=88 ttl=114 time=25.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=89 ttl=114 time=17.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=90 ttl=114 time=17.3 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=91 ttl=114 time=15.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=92 ttl=114 time=16.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=93 ttl=114 time=17.0 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=94 ttl=114 time=18.9 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=95 ttl=114 time=16.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=96 ttl=114 time=21.2 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=97 ttl=114 time=16.4 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=98 ttl=114 time=17.1 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=99 ttl=114 time=21.7 ms
+64 bytes from fra16s08-in-f196.1e100.net (172.217.16.196): icmp_seq=100 ttl=114 time=17.1 ms
 
---- 192.168.0.1 ping statistics ---
-50 packets transmitted, 50 received, 0% packet loss, time 10046ms
-rtt min/avg/max/mdev = 0.598/1.053/1.741/0.373 ms
+--- www.google.com ping statistics ---
+100 packets transmitted, 100 received, 0% packet loss, time 19859ms
+rtt min/avg/max/mdev = 15.694/20.155/34.552/3.712 ms
