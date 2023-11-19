@@ -1,19 +1,19 @@
-Connecting to host 192.168.0.171, port 5201
-[  5] local 172.21.197.117 port 59302 connected to 192.168.0.171 port 5201
+Connecting to host 192.168.0.131, port 5201
+[  5] local 192.168.0.171 port 52695 connected to 192.168.0.131 port 5201
 [ ID] Interval           Transfer     Bitrate         Total Datagrams
-[  5]   0.00-1.00   sec  8.93 MBytes  74.9 Mbits/sec  6469  
-[  5]   1.00-2.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
-[  5]   2.00-3.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
-[  5]   3.00-4.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
-[  5]   4.00-5.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
-[  5]   5.00-6.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
-[  5]   6.00-7.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
-[  5]   7.00-8.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
-[  5]   8.00-9.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
-[  5]   9.00-10.00  sec  8.94 MBytes  75.0 Mbits/sec  6474  
+[  5]   0.00-1.00   sec  5.62 MBytes  47.1 Mbits/sec  4037  
+[  5]   1.00-2.00   sec  5.31 MBytes  44.6 Mbits/sec  3816  
+[  5]   2.00-3.00   sec  5.83 MBytes  48.9 Mbits/sec  4184  
+[  5]   3.00-4.00   sec  6.25 MBytes  52.4 Mbits/sec  4486  
+[  5]   4.00-5.00   sec  6.16 MBytes  51.7 Mbits/sec  4424  
+[  5]   5.00-6.00   sec  6.13 MBytes  51.4 Mbits/sec  4400  
+[  5]   6.00-7.00   sec  6.70 MBytes  56.2 Mbits/sec  4814  
+[  5]   7.00-8.00   sec  6.59 MBytes  55.3 Mbits/sec  4735  
+[  5]   8.00-9.00   sec  6.07 MBytes  50.9 Mbits/sec  4360  
+[  5]   9.00-10.00  sec  6.20 MBytes  52.0 Mbits/sec  4452  
 - - - - - - - - - - - - - - - - - - - - - - - - -
 [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
-[  5]   0.00-10.00  sec  89.4 MBytes  75.0 Mbits/sec  0.000 ms  0/64739 (0%)  sender
-[  5]   0.00-11.46  sec  52.5 MBytes  38.4 Mbits/sec  0.262 ms  26743/64739 (41%)  receiver
+[  5]   0.00-10.00  sec  60.9 MBytes  51.1 Mbits/sec  0.000 ms  0/43708 (0%)  sender
+[  5]   0.00-10.00  sec  60.9 MBytes  51.1 Mbits/sec  0.729 ms  0/43708 (0%)  receiver
 
 iperf Done.

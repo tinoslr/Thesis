@@ -16,12 +16,11 @@ def extract_mbits_per_sec(file_path):
                     # append latency to an list
                     bandwith_list.append(bandwith)
             del bandwith_list[-2:]
-            print(bandwith_list)
     return bandwith_list
 
 
 def calculate_average(bandwith_list):
-    print(bandwith_list)
+    
     sum = 0
     for i in bandwith_list:
         sum += i
