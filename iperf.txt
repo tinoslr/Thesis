@@ -1,21 +1,19 @@
-Connecting to host 192.168.0.131, port 5201
-Reverse mode, remote host 192.168.0.131 is sending
-[  5] local 192.168.0.171 port 54197 connected to 192.168.0.131 port 5201
-[ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
-[  5]   0.00-1.00   sec  5.61 MBytes  47.1 Mbits/sec  0.154 ms  0/4031 (0%)  
-[  5]   1.00-2.00   sec  6.06 MBytes  50.9 Mbits/sec  0.132 ms  0/4355 (0%)  
-[  5]   2.00-3.00   sec  5.85 MBytes  49.1 Mbits/sec  0.166 ms  0/4204 (0%)  
-[  5]   3.00-4.00   sec  6.00 MBytes  50.3 Mbits/sec  0.144 ms  0/4309 (0%)  
-[  5]   4.00-5.00   sec  5.95 MBytes  49.9 Mbits/sec  0.153 ms  0/4274 (0%)  
-[  5]   5.00-6.00   sec  5.95 MBytes  49.9 Mbits/sec  0.254 ms  0/4273 (0%)  
-[  5]   6.00-7.00   sec  5.94 MBytes  49.9 Mbits/sec  0.204 ms  0/4269 (0%)  
-[  5]   7.00-8.00   sec  5.99 MBytes  50.3 Mbits/sec  0.169 ms  0/4305 (0%)  
-[  5]   8.00-9.00   sec  6.03 MBytes  50.6 Mbits/sec  0.122 ms  0/4332 (0%)  
-[  5]   9.00-10.00  sec  5.89 MBytes  49.4 Mbits/sec  0.159 ms  0/4227 (0%)  
+Connecting to host 192.168.0.171, port 5201
+[  5] local 172.21.197.117 port 59302 connected to 192.168.0.171 port 5201
+[ ID] Interval           Transfer     Bitrate         Total Datagrams
+[  5]   0.00-1.00   sec  8.93 MBytes  74.9 Mbits/sec  6469  
+[  5]   1.00-2.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
+[  5]   2.00-3.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
+[  5]   3.00-4.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
+[  5]   4.00-5.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
+[  5]   5.00-6.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
+[  5]   6.00-7.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
+[  5]   7.00-8.00   sec  8.94 MBytes  75.0 Mbits/sec  6474  
+[  5]   8.00-9.00   sec  8.94 MBytes  75.0 Mbits/sec  6475  
+[  5]   9.00-10.00  sec  8.94 MBytes  75.0 Mbits/sec  6474  
 - - - - - - - - - - - - - - - - - - - - - - - - -
 [ ID] Interval           Transfer     Bitrate         Jitter    Lost/Total Datagrams
-[  5]   0.00-10.00  sec  59.8 MBytes  50.1 Mbits/sec  0.000 ms  0/42579 (0%)  sender
-[SUM]  0.0-10.0 sec  293 datagrams received out-of-order
-[  5]   0.00-10.00  sec  59.3 MBytes  49.7 Mbits/sec  0.159 ms  0/42579 (0%)  receiver
+[  5]   0.00-10.00  sec  89.4 MBytes  75.0 Mbits/sec  0.000 ms  0/64739 (0%)  sender
+[  5]   0.00-11.46  sec  52.5 MBytes  38.4 Mbits/sec  0.262 ms  26743/64739 (41%)  receiver
 
 iperf Done.
