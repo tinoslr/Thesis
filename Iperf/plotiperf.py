@@ -6,9 +6,10 @@ matplotlib.use('Agg')
 
 def save_plot(x_axis,y_axis):
     #plot figure and save it
-    plt.plot(x_axis,y_axis)
-    plt.ylabel('Measured_Troughput')
-    plt.xlabel('Expected_Troughput')
+    plt.grid(True)
+    plt.plot(x_axis,y_axis, linestyle='dotted')
+    plt.ylabel('Measured Troughput in Mbps')
+    plt.xlabel('Expected Troughput in Mbps')
     plt.savefig("troughput.png")
 
 
