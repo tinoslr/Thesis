@@ -47,14 +47,20 @@ def calculate_cas(latency_list):
         counter = 0
     return CSA_list
 
-def save_plot(x_axis,y_axis):
+def CSA_Plot(x_axis,y_axis):
     #plot figure and save it
     plt.plot(x_axis,y_axis)
     plt.ylabel('CSA in %')
     plt.xlabel('maximum latency in ms')
-    plt.savefig("matplotlib.png")
+    plt.savefig("CSA_Plot.png")
+
+def BoxPlot_Latency(data):
+    fig = plt.figure(figsize =(10, 7))
+    plt.boxplot(data)
+    plt.savefig("BoxPlot.png")
 
 
 extract_latency_from_ping(file_path)
 calculate_cas(latency_list)
-save_plot(maximum_latency,CSA_list)
+CSA_Plot(maximum_latency,CSA_list)
+BoxPlot_Latency(latency_list)
