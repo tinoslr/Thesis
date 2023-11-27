@@ -28,6 +28,6 @@ def calculate_average(bandwith_list):
     return print(Average)
 
 
-file_path= 'iperf.txt'
+file_path= '../iperf.txt'
 extract_mbits_per_sec(file_path)
 calculate_average(bandwith_list)
