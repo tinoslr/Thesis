@@ -42,6 +42,7 @@ def calculate_cas(latency_list):
         # Calculate the CAS by dividing the counter (Latency below maximum latency)   and total amount of elements  
         CSA = counter / list_length
         #add the calculated CSA to a list and multiply by 100 to get Percentage
+        
         CSA_list.append(CSA*100)
         print('The CSA for a Maximum Latency of',j,'is:', CSA)
         counter = 0
@@ -52,12 +53,12 @@ def CSA_Plot(x_axis,y_axis):
     plt.plot(x_axis,y_axis)
     plt.ylabel('CSA in %')
     plt.xlabel('maximum latency in ms')
-    plt.savefig("CSA_Plot.png")
+    plt.savefig("../Pictures/CSA_Latency_Plot.png")
 
 def BoxPlot_Latency(data):
     fig = plt.figure(figsize =(10, 7))
     plt.boxplot(data)
-    plt.savefig("BoxPlot.png")
+    plt.savefig("../Pictures/CSA_Latency_BoxPlot.png")
 
 
 extract_latency_from_ping(file_path)

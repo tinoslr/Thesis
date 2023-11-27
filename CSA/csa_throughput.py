@@ -39,7 +39,7 @@ def CSA_Plot(x_axis,y_axis):
     plt.plot(x_axis,y_axis)
     plt.ylabel('CSA in %')
     plt.xlabel('minimum Troughput in Mbits/s')
-    plt.savefig("CSA_Throughput_Plot.png")
+    plt.savefig("../Pictures/CSA_Throughput_Plot.png")
 
 
 file_path = '../iperf.txt'

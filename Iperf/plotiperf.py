@@ -10,7 +10,7 @@ def save_plot(x_axis,y_axis):
     plt.plot(x_axis,y_axis, linestyle='dotted')
     plt.ylabel('Measured Troughput in Mbps')
     plt.xlabel('Expected Troughput in Mbps')
-    plt.savefig("troughput.png")
+    plt.savefig("../Picutres/Iperf.png")
 
 
 Expected_Troughput = [5,10,25,50,75,100,150,200,500]
