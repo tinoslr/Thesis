@@ -6,7 +6,7 @@ import matplotlib as mpl
 mpl.style.use('ggplot')
 import seaborn as sns
 bandwith_list=[]
-maximum_bandwith=[10,20,30,40,50]
+maximum_bandwith=[80,90,92.5,95,97.5,100]
 csa_list=[]
 
 def extract_mbits_per_sec(file_path):
@@ -42,10 +42,10 @@ def pandas(bandwith_list):
     fig, axes = plt.subplots(figsize=(10,7))
 
     s.plot(kind='line')
-    plt.ylabel('Bandwith in Mbits')
-    plt.xlabel('Data Packets')
-    fig.savefig("../Pictures/Bandwith_ping.pdf")
-    fig.savefig("../Pictures/Bandwith_ping.png")
+    plt.ylabel('Throughput in Mbits')
+    plt.xlabel('Time in seconds')
+    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    fig.savefig("../Pictures/Bandwith_iperf.png")
 
     print(s.describe())
 
@@ -54,7 +54,7 @@ def CSA_Plot(x_axis,y_axis):
     fig = plt.figure(figsize =(10, 7))
     plt.plot(x_axis,y_axis)
     plt.ylabel('CSA in %')
-    plt.xlabel('minimum Troughput in Mbits/s')
+    plt.xlabel('Minimum Throughput in Mbits/s')
     plt.savefig("../Pictures/CSA_Throughput_Plot.png")
 
 def BoxPlot_Troughput(data):

@@ -65,11 +65,6 @@ def pandas(latency_list):
     print(s.describe())
 
 
-
-
-
-
-
 def CSA_Plot(x_axis,y_axis):
     #plot figure and save it
     fig = plt.figure(figsize =(10, 7))
@@ -77,6 +72,7 @@ def CSA_Plot(x_axis,y_axis):
     plt.ylabel('CSA in %')
     plt.xlabel('maximum latency in ms')
     plt.savefig("../Pictures/CSA_Latency_Plot.png")
+
 
 def BoxPlot_Latency(data):
     fig = plt.figure(figsize =(10, 7))
