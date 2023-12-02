@@ -1,12 +1,15 @@
 import re
-import matplotlib.pyplot as plt
-import matplotlib
-matplotlib.use('Agg')
+import pandas as pd 
+import numpy as numpy
+import matplotlib.pyplot as plt 
+import matplotlib as mpl
+mpl.style.use('ggplot')
+import seaborn as sns
 
 
 latency_list= []
 CSA_list= []
-maximum_latency =[20,30,40,50,60,70,80,90]
+maximum_latency =[10,20,30,40,50,60,70,80,90]
 file_path = 'ping.txt'
 
 
@@ -48,8 +51,28 @@ def calculate_cas(latency_list):
         counter = 0
     return CSA_list
 
+
+def pandas(latency_list):
+    s = pd.Series(latency_list)
+    fig, axes = plt.subplots(figsize=(10,7))
+
+    s.plot(kind='line')
+    plt.ylabel('Latency in ms')
+    plt.xlabel('Ping Count')
+    fig.savefig("../Pictures/Latency_ping.pdf")
+    fig.savefig("../Pictures/Latency_ping.png")
+
+    print(s.describe())
+
+
+
+
+
+
+
 def CSA_Plot(x_axis,y_axis):
     #plot figure and save it
+    fig = plt.figure(figsize =(10, 7))
     plt.plot(x_axis,y_axis)
     plt.ylabel('CSA in %')
     plt.xlabel('maximum latency in ms')
@@ -65,3 +88,4 @@ extract_latency_from_ping(file_path)
 calculate_cas(latency_list)
 CSA_Plot(maximum_latency,CSA_list)
 BoxPlot_Latency(latency_list)
+pandas(latency_list)
