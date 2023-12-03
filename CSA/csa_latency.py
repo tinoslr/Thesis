@@ -9,7 +9,7 @@ import seaborn as sns
 
 latency_list= []
 CSA_list= []
-maximum_latency =[10,20,30,40,50,60,70,80,90]
+maximum_latency =[5,10,20,30,40,50,60,70,80,90]
 file_path = 'ping.txt'
 
 
@@ -77,6 +77,7 @@ def CSA_Plot(x_axis,y_axis):
 def BoxPlot_Latency(data):
     fig = plt.figure(figsize =(10, 7))
     plt.boxplot(data)
+    plt.ylabel('Latency in ms')
     plt.savefig("../Pictures/CSA_Latency_BoxPlot.png")
 
 

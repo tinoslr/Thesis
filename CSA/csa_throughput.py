@@ -6,7 +6,7 @@ import matplotlib as mpl
 mpl.style.use('ggplot')
 import seaborn as sns
 bandwith_list=[]
-maximum_bandwith=[80,90,92.5,95,97.5,100]
+maximum_bandwith=[50,60,70,75,80,85,90]
 csa_list=[]
 
 def extract_mbits_per_sec(file_path):
