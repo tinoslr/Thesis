@@ -148,6 +148,7 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
     s3.plot(ax=axes[1],kind='kde')
+    
     axes[1].set_title('KDE Plot')
     axes[1].set_xlabel('Throughput in Mbits')
     axes[1].set_ylabel('Density')
