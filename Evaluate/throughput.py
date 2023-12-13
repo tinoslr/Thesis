@@ -62,21 +62,6 @@ def extract_mbits_per_sec3(file_path3):
             del bandwith_list3[-2:]
     return bandwith_list3
 
-def calculate_bandwith_list(bandwith_list):
-    #This function calculates the Bandwith CSA
-
-    counter = 0
-    for j in maximum_bandwith:
-        for i in bandwith_list:
-             if i >= j:
-                  counter +=1
-        CSA = (counter*100)/ len(bandwith_list)
-        csa_list.append(CSA)
-        print('The CSA for a minimum Throughput of',j,'Mbits/s is:', CSA,'%')
-        counter = 0
-    return csa_list
-
-
 def pandas(bandwith_list1):
     s1 = pd.Series(bandwith_list1)
 
@@ -163,14 +148,6 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
 
     print(s1.describe(), s2.describe(), s3.describe())
 
-def CSA_Plot(x_axis,y_axis):
-    fig = plt.figure(figsize =(10, 7))
-    plt.plot(x_axis,y_axis)
-    plt.ylabel('CSA in %')
-    plt.xlabel('Minimum Throughput in Mbits/s')
-    plt.savefig("../Pictures/CSA_Throughput_Plot.png")
-
-
 
 file_path1 = '../iperf1.txt'
 file_path2 = '../iperf2.txt'
@@ -179,8 +156,6 @@ file_path3 = '../iperf3.txt'
 extract_mbits_per_sec1(file_path1)
 extract_mbits_per_sec2(file_path2)
 extract_mbits_per_sec3(file_path3)
-#calculate_bandwith_list(bandwith_list)
 #pandas(bandwith_list1)
 #pandas2(bandwith_list1,bandwith_list2)
 pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
-#CSA_Plot(maximum_bandwith,csa_list)

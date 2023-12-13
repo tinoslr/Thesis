@@ -9,8 +9,6 @@ import seaborn as sns
 
 
 latency_list= []
-CSA_list= []
-maximum_latency =[5,10,20,30,40,50,60,70,80,90]
 file_path = 'ping.txt'
 
 
@@ -31,28 +29,7 @@ def extract_latency_from_ping(file_path):
         print(f"Die Datei '{file_path}' wurde nicht gefunden.")
     return latency_list
 
-def calculate_cas(latency_list):
-    #This function calculates the CSA and adds it to an list
-    counter = 0
-    CSA = 0
-    
-    list_length = len(latency_list)
-    
-    #compare the meassured latency with the maximum latency for CSA
-    for j in maximum_latency:
-        # check for each latency if its higher or lower then the selected maximum latency and if its lower, increase counter by 1
-        for i in latency_list:
-            if i < j:
-                counter +=1
 
-        # Calculate the CAS by dividing the counter (Latency below maximum latency)   and total amount of elements  
-        CSA = counter / list_length
-        #add the calculated CSA to a list and multiply by 100 to get Percentage
-        
-        CSA_list.append(CSA*100)
-        print('The CSA for a Maximum Latency of',j,'is:', CSA)
-        counter = 0
-    return CSA_list
 
 
 def pandas(latency_list):
@@ -106,9 +83,8 @@ def BoxPlot_Latency(data):
     plt.savefig("../Pictures/CSA_Latency_BoxPlot.png")
 
 
-#comment out the functions you need
+
+file_path = 'ping.txt'
+
 extract_latency_from_ping(file_path)
-#calculate_cas(latency_list)
-#CSA_Plot(maximum_latency,CSA_list)
-#BoxPlot_Latency(latency_list)
 pandas(latency_list)
