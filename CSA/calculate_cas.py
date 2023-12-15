@@ -9,6 +9,8 @@ latency_list= []
 CSA_list= []
 maximum_latency =[5,10,20,30,40,50,60,70,80,90]
 
+
+
 def extract_latency_from_ping(file_path):
     #This function extracts the latency from a ping.txt file
     try:
@@ -64,9 +66,57 @@ def BoxPlot_Latency(data):
     plt.ylabel('Latency in ms')
     plt.savefig("../Pictures/CSA_Latency_BoxPlot.png")
 
-file_path=''
 
-extract_latency_from_ping(file_path)
-calculate_cas(latency_list)
-CSA_Plot(maximum_latency,latency_list)
-BoxPlot_Latency(latency_list)
+
+
+def extract_troughput(filepaths,all_lists):
+
+    for filepath, current_list in zip(filepaths,all_lists):
+        with open(filepath, 'r') as file:
+                lines = file.readlines()
+                for i, line in enumerate(lines, start=1):
+                    # i dont know, google it. filters the bandwith part out of the ping.txt file
+                    match = re.search(r'(\d+(\.\d+)?)\s(M|)bits/sec', line)
+                    if match:
+                        # attach the value to the var = latency
+                        bandwith = float(match.group(1))
+                        if bandwith > 2:
+                        # append throughput to an list
+                            current_list.append(bandwith)
+                    
+
+                del current_list[-2:]
+    return
+
+def pandas2(bandwith_list1,bandwith_list2):
+    s1 = pd.Series(bandwith_list1)
+    s2 = pd.Series(bandwith_list2)
+    #create a plot with 2 subplots 
+    fig, axes = plt.subplots(1, 2,figsize=(10,6))
+
+    # configuration of plot 1 
+    s1.plot(ax=axes[0],kind='line')
+    s2.plot(ax=axes[1],kind='line')
+    
+    axes[0].set_xlabel('Time in s')
+    axes[0].set_ylabel('Throughput in Mbit/s')
+   
+    axes[1].set_xlabel('Time in s')
+    axes[1].set_ylabel('Throughput in Mbit/s')
+    
+    fig.savefig("../CAS.pdf")
+    print(s1.describe(), s2.describe())
+
+
+bandwith_list1=[]
+bandwith_list2=[]
+bandwith_list3=[]
+all_lists=[bandwith_list1,bandwith_list2,bandwith_list3]
+filepaths=["GBR.txt","default1.txt"]
+
+#extract_latency_from_ping(file_path)
+#calculate_cas(latency_list)
+#CSA_Plot(maximum_latency,latency_list)
+#BoxPlot_Latency(latency_list)
+extract_troughput(filepaths,all_lists)
+pandas2(bandwith_list1,bandwith_list2)

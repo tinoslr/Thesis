@@ -23,8 +23,9 @@ def extract_mbits_per_sec1(file_path1):
                 if match:
                     # attach the value to the var = latency
                     bandwith = float(match.group(1))
+                    if bandwith > 650:
                     # append throughput to an list
-                    bandwith_list1.append(bandwith)
+                        bandwith_list1.append(bandwith)
                     
 
             del bandwith_list1[-2:]
@@ -41,8 +42,9 @@ def extract_mbits_per_sec2(file_path2):
                 if match:
                     # attach the value to the var = latency
                     bandwith = float(match.group(1))
+                    if bandwith > 45:
                     # append latency to an list
-                    bandwith_list2.append(bandwith)
+                        bandwith_list2.append(bandwith)
             del bandwith_list2[-2:]
     return bandwith_list2
 
@@ -58,7 +60,8 @@ def extract_mbits_per_sec3(file_path3):
                     # attach the value to the var = latency
                     bandwith = float(match.group(1))
                     # append latency to an list
-                    bandwith_list3.append(bandwith)
+                    if bandwith > 45:
+                        bandwith_list3.append(bandwith)
             del bandwith_list3[-2:]
     return bandwith_list3
 
@@ -72,15 +75,15 @@ def pandas(bandwith_list1):
     s1.plot(ax=axes[0],kind='line')
     axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbits')
+    axes[0].set_ylabel('Throughput in Mbit/s')
     
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     axes[1].set_title('KDE Plot')
-    axes[1].set_xlabel('Throughput in Mbits')
+    axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
-    plt.xlim(120, 170)
+    plt.xlim(120, 250)
     plt.legend(['UE1'],loc="upper right")
 
     # make it fit better
@@ -100,16 +103,16 @@ def pandas2(bandwith_list1,bandwith_list2):
     s2.plot(ax=axes[0],kind='line')
     axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbits')
+    axes[0].set_ylabel('Throughput in Mbit/s')
     
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
     axes[1].set_title('KDE Plot')
-    axes[1].set_xlabel('Throughput in Mbits')
+    axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
-    plt.xlim(0, 80)
+    plt.xlim(50, 150)
     plt.legend(['UE1','UE2'],loc="upper right")
     fig.savefig("../Pictures/Bandwith_iperf.pdf")
     print(s1.describe(), s2.describe())
@@ -126,7 +129,7 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s3.plot(ax=axes[0],kind='line')
     axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbits')
+    axes[0].set_ylabel('Throughput in Mbit/s')
     
 
     #configuration of plot 2
@@ -135,27 +138,25 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s3.plot(ax=axes[1],kind='kde')
     
     axes[1].set_title('KDE Plot')
-    axes[1].set_xlabel('Throughput in Mbits')
+    axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
-    plt.xlim(0, 80)
+    plt.xlim(40, 90)
     plt.legend(['UE1','UE2','UE3'],loc="upper right")
     fig.savefig("../Pictures/Bandwith_iperf.pdf")
     
 
-    print(s1.describe())
-    print(s2.describe())
-    print(s3.describe())
+   
 
     print(s1.describe(), s2.describe(), s3.describe())
 
 
-file_path1 = '../iperf1.txt'
-file_path2 = '../iperf2.txt'
-file_path3 = '../iperf3.txt'
+file_path1 = '../5GLong.txt'
+file_path2 = '../iperf5G_100.txt'
+file_path3 = '../iperf5G_66_2.txt'
 
 extract_mbits_per_sec1(file_path1)
-extract_mbits_per_sec2(file_path2)
-extract_mbits_per_sec3(file_path3)
-#pandas(bandwith_list1)
+#extract_mbits_per_sec2(file_path2)
+#extract_mbits_per_sec3(file_path3)
+pandas(bandwith_list1)
 #pandas2(bandwith_list1,bandwith_list2)
-pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
+#pandas3(bandwith_list1,bandwith_list2,bandwith_list3)

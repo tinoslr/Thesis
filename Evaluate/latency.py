@@ -84,7 +84,7 @@ def BoxPlot_Latency(data):
 
 
 
-file_path = 'ping.txt'
+file_path = '../ping66.txt'
 
 extract_latency_from_ping(file_path)
 pandas(latency_list)
