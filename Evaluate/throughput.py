@@ -6,15 +6,17 @@ import matplotlib as mpl
 mpl.style.use('ggplot')
 import seaborn as sns
 from scipy.stats import gaussian_kde
+
+
 bandwith_list1=[]
 bandwith_list2=[]
 bandwith_list3=[]
-maximum_bandwith=[50,60,70,75,80,85,90]
-csa_list=[]
+
+
 
 def extract_mbits_per_sec1(file_path1):
     #This function extracts the Throughput of an iperf1.txt file
-
+    
     with open(file_path1, 'r') as file:
             lines = file.readlines()
             for i, line in enumerate(lines, start=1):
@@ -65,6 +67,27 @@ def extract_mbits_per_sec3(file_path3):
             del bandwith_list3[-2:]
     return bandwith_list3
 
+def extract_troughput(filepaths,all_lists):
+    try:
+        for filepath, current_list in zip(filepaths,all_lists):
+            with open(filepath, 'r') as file:
+                    lines = file.readlines()
+                    for i, line in enumerate(lines, start=1):
+                        # i dont know, google it. filters the bandwith part out of the ping.txt file
+                        match = re.search(r'(\d+(\.\d+)?)\s(M|)bits/sec', line)
+                        if match:
+                            # attach the value to the var = latency
+                            bandwith = float(match.group(1))
+                            if bandwith > 60:
+                            # append throughput to an list
+                                current_list.append(bandwith)
+                        
+    
+                    del current_list[-2:]
+    except FileNotFoundError:
+        print(f"Die Datei '{filepath}' wurde nicht gefunden.")                
+    return 
+
 def pandas(bandwith_list1):
     s1 = pd.Series(bandwith_list1)
 
@@ -73,14 +96,12 @@ def pandas(bandwith_list1):
 
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
-    axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
     axes[0].set_ylabel('Throughput in Mbit/s')
     
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
-    axes[1].set_title('KDE Plot')
     axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
     plt.xlim(120, 250)
@@ -101,7 +122,6 @@ def pandas2(bandwith_list1,bandwith_list2):
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
-    axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
     axes[0].set_ylabel('Throughput in Mbit/s')
     
@@ -109,7 +129,6 @@ def pandas2(bandwith_list1,bandwith_list2):
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
-    axes[1].set_title('KDE Plot')
     axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
     plt.xlim(50, 150)
@@ -127,7 +146,6 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
     s3.plot(ax=axes[0],kind='line')
-    axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Time in s')
     axes[0].set_ylabel('Throughput in Mbit/s')
     
@@ -137,7 +155,6 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s2.plot(ax=axes[1],kind='kde')
     s3.plot(ax=axes[1],kind='kde')
     
-    axes[1].set_title('KDE Plot')
     axes[1].set_xlabel('Throughput in Mbit/s')
     axes[1].set_ylabel('Density')
     plt.xlim(40, 90)
@@ -150,13 +167,19 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     print(s1.describe(), s2.describe(), s3.describe())
 
 
-file_path1 = '../5GLong.txt'
-file_path2 = '../iperf5G_100.txt'
-file_path3 = '../iperf5G_66_2.txt'
 
-extract_mbits_per_sec1(file_path1)
+file_paths=[
+'../iperf5G_100.txt',
+'../iperf5G_100_2.txt',
+'../iperf5G66.txt',      
+]
+
+all_lists=[bandwith_list1,bandwith_list2,bandwith_list3]
+#extract_mbits_per_sec1(file_path1)
 #extract_mbits_per_sec2(file_path2)
 #extract_mbits_per_sec3(file_path3)
-pandas(bandwith_list1)
-#pandas2(bandwith_list1,bandwith_list2)
+extract_troughput(file_paths,all_lists)
+#pandas(bandwith_list1)
+pandas2(bandwith_list1,bandwith_list2)
 #pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
+

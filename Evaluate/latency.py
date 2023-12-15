@@ -44,14 +44,13 @@ def pandas(latency_list):
 
     # configuration of plot 1 
     s.plot(ax=axes[0],kind='line')
-    axes[0].set_title('Line Plot')
     axes[0].set_xlabel('Ping Count')
     axes[0].set_ylabel('Latency in ms')
     
 
     #configuration of plot 2
     s.plot(ax=axes[1],kind='kde')
-    axes[1].set_title('KDE Plot')
+    
     axes[1].set_xlabel('Latency in ms')
     axes[1].set_ylabel('Density')
     plt.xlim(-10, 150)
@@ -84,7 +83,7 @@ def BoxPlot_Latency(data):
 
 
 
-file_path = '../ping66.txt'
+file_path = '../ping100.txt'
 
 extract_latency_from_ping(file_path)
 pandas(latency_list)
