@@ -9,7 +9,7 @@ import seaborn as sns
 
 
 latency_list= []
-file_path = 'ping.txt'
+file_path = 'ping45.txt'
 
 
 def extract_latency_from_ping(file_path):
@@ -53,7 +53,7 @@ def pandas(latency_list):
     
     axes[1].set_xlabel('Latency in ms')
     axes[1].set_ylabel('Density')
-    plt.xlim(-10, 300)
+    plt.xlim(-10, 100)
 
     # make it fit better
     plt.tight_layout()
@@ -83,7 +83,7 @@ def BoxPlot_Latency(data):
 
 
 
-file_path = '../ping.txt'
+file_path = '../pinglingching.txt'
 
 extract_latency_from_ping(file_path)
 pandas(latency_list)
