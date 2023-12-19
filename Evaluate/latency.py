@@ -53,7 +53,7 @@ def pandas(latency_list):
     
     axes[1].set_xlabel('Latency in ms')
     axes[1].set_ylabel('Density')
-    plt.xlim(-10, 150)
+    plt.xlim(-10, 300)
 
     # make it fit better
     plt.tight_layout()
@@ -83,7 +83,7 @@ def BoxPlot_Latency(data):
 
 
 
-file_path = '../ping100.txt'
+file_path = '../ping.txt'
 
 extract_latency_from_ping(file_path)
 pandas(latency_list)
