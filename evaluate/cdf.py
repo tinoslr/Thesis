@@ -10,8 +10,8 @@ from scipy.stats import gaussian_kde
 
 
 file_paths=[
-'../ping66.txt',
-'../MA5bUE.txt',
+'../txtfiles/ping225.txt',
+'../txtfiles/ping5G1.txt',
 '../MA5cUE.txt',
 '../MA5dUE.txt',
 '../MA5eUE.txt'     
@@ -57,11 +57,13 @@ def pandas(bandwith_list1):
 
     # Plot der CDF
     plt.plot(cdf.index, cdf.values, linestyle='-', color='b')
-    plt.title('Cumulative Distribution Function (CDF)')
-    plt.xlabel('Values')
-    plt.ylabel('CDF')
-    plt.show()
+    plt.xlabel('Latency in ms', color='black')
+    plt.ylabel('Probability', color='black')
+    plt.tick_params(axis='x', colors='black')
+    plt.tick_params(axis='y', colors='black')
+
     plt.savefig("../Pictures/CDF.pdf")
+    plt.savefig("../Pictures/CDF.png")
 
 extract_troughput(file_paths,all_lists)
 pandas(bandwith_list1)
