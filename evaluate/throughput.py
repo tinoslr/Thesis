@@ -27,7 +27,11 @@ def extract_troughput(filepaths,all_lists):
                         if match:
                             # attach the value to the var = latency
                             bandwith = float(match.group(1))
-                            if bandwith > 20:
+                            #if bandwith > 70:
+                            #    bandwith = 60
+                            if bandwith > 0:
+                                
+                            
                             # append throughput to an list
                                 current_list.append(bandwith)
                         
@@ -45,21 +49,28 @@ def pandas(bandwith_list1):
 
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
-    
+    axes[0].set_xlabel('Time in s',color='black')
+    axes[0].set_ylabel('Throughput in Mbit/s',color='black')
+    axes[0].tick_params(axis='x', colors='black')
+    axes[0].tick_params(axis='y', colors='black')
+    axes[0].set_ylim(190,290)
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(120, 300)
+    axes[1].set_xlabel('Throughput in Mbit/s',color='black')
+    axes[1].set_ylabel('Density',color='black')
+    axes[1].tick_params(axis='x', colors='black')
+    axes[1].tick_params(axis='y', colors='black')
+    axes[1].set_xlim(180, 280)
+    axes[1].set_ylim(0, 0.4)
+
+    
     plt.legend(['UE1'],loc="upper right")
 
     # make it fit better
-    plt.tight_layout()
-    fig.savefig("../Pictures/Bandwith_iperf.pdf")
     
+    fig.savefig("../Pictures/BW_1UE.pdf")
+    fig.savefig("../Pictures/BW_1UE.png")
     print(s1.describe())
 
 def pandas2(bandwith_list1,bandwith_list2):
@@ -71,18 +82,26 @@ def pandas2(bandwith_list1,bandwith_list2):
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
+    axes[0].set_xlabel('Time in s',color='black')
+    axes[0].set_ylabel('Throughput in Mbit/s',color='black')
+    axes[0].tick_params(axis='x', colors='black')
+    axes[0].tick_params(axis='y', colors='black')
+    axes[0].set_ylim(40,150)
     
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(50, 150)
+    axes[1].set_xlabel('Throughput in Mbit/s',color='black')
+    axes[1].set_ylabel('Density',color='black')
+    axes[1].tick_params(axis='x', colors='black')
+    axes[1].tick_params(axis='y', colors='black')
+    axes[1].set_xlim(40, 140)
+    axes[1].set_ylim(0, 0.4)
+
     plt.legend(['UE1','UE2'],loc="upper right")
-    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    fig.savefig("../Pictures/BW_2UE.png")
+    fig.savefig("../Pictures/BW_2UE.pdf")
     print(s1.describe(), s2.describe())
 
 def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
@@ -95,20 +114,30 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
     s3.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
+    axes[0].set_xlabel('Time in s',color='black')
+    axes[0].set_ylabel('Throughput in Mbit/s',color='black')
+    axes[0].tick_params(axis='x', colors='black')
+    axes[0].tick_params(axis='y', colors='black')
+    axes[0].set_ylim(20,130)
+
     
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
     s3.plot(ax=axes[1],kind='kde')
+    axes[1].set_xlabel('Throughput in Mbit/s',color='black')
+    axes[1].set_ylabel('Density',color='black')
+    axes[1].tick_params(axis='x', colors='black')
+    axes[1].tick_params(axis='y', colors='black')
+    axes[1].set_xlim(20, 120)
+    axes[1].set_ylim(0, 0.4)
+
+
     
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(20, 130)
     plt.legend(['UE1','UE2','UE3'],loc="upper right")
-    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    fig.savefig("../Pictures/BW_3UE.png")
+    fig.savefig("../Pictures/BW_3UE.pdf")
     
 
    
@@ -127,21 +156,29 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     s2.plot(ax=axes[0],kind='line')
     s3.plot(ax=axes[0],kind='line')
     s4.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
-    
+    axes[0].set_xlabel('Time in s',color='black')
+    axes[0].set_ylabel('Throughput in Mbit/s',color='black')
+    axes[0].tick_params(axis='x', colors='black')
+    axes[0].tick_params(axis='y', colors='black')
+    axes[0].set_ylim(0,110)
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     s2.plot(ax=axes[1],kind='kde')
     s3.plot(ax=axes[1],kind='kde')
     s4.plot(ax=axes[1],kind='kde')
+    axes[1].set_xlabel('Throughput in Mbit/s',color='black')
+    axes[1].set_ylabel('Density',color='black')
+    axes[1].tick_params(axis='x', colors='black')
+    axes[1].tick_params(axis='y', colors='black')
+    axes[1].set_xlim(0, 100)
+    axes[1].set_ylim(0, 0.4)
 
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(0, 130)
+
+    
     plt.legend(['UE1','UE2','UE3','UE4'],loc="upper right")
-    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    fig.savefig("../Pictures/BW_4UE.png")
+    fig.savefig("../Pictures/BW_4UE.pdf")
     
 
    
@@ -162,8 +199,11 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     s3.plot(ax=axes[0],kind='line')
     s4.plot(ax=axes[0],kind='line')
     s5.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
+    axes[0].set_xlabel('Time in s',color='black')
+    axes[0].set_ylabel('Throughput in Mbit/s',color='black')
+    axes[0].tick_params(axis='x', colors='black')
+    axes[0].tick_params(axis='y', colors='black')
+    axes[0].set_ylim(0,110)
     
 
     #configuration of plot 2
@@ -172,11 +212,16 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     s3.plot(ax=axes[1],kind='kde')
     s4.plot(ax=axes[1],kind='kde')
     s5.plot(ax=axes[1],kind='kde')
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(0, 130)
+    axes[1].set_xlabel('Throughput in Mbit/s',color='black')
+    axes[1].set_ylabel('Density',color='black')
+    axes[1].tick_params(axis='x', colors='black')
+    axes[1].tick_params(axis='y', colors='black')
+    axes[1].set_xlim(0, 100)
+    axes[1].set_ylim(0, 0.4)
+    
     plt.legend(['UE1','UE2','UE3','UE4','UE5'],loc="upper right")
-    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    fig.savefig("../Pictures/BW_5UE.png")
+    fig.savefig("../Pictures/BW_5UE.pdf")
     
 
    
@@ -184,18 +229,18 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     print(s1.describe(), s2.describe(), s3.describe(),s4.describe(),s5.describe())
 
 file_paths=[
-'../1UE5G.txt',
-'../M4b.txt',
-'../M4c.txt',
-'../M4d.txt',
-'../MA5eUE.txt'     
+'../txtfiles/5UEWFa.txt',
+'../txtfiles/5UEWFb.txt',
+'../txtfiles/5UEWFc.txt',
+'../txtfiles/5UEWFd.txt',
+'../txtfiles/5UEWFe.txt'     
 ]
 
 all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]
 extract_troughput(file_paths,all_lists)
-pandas(bandwith_list1)
+#pandas(bandwith_list1)
 #pandas2(bandwith_list1,bandwith_list2)
 #pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
 #pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4)
-#pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5)
+pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5)
 
