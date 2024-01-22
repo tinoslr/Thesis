@@ -27,9 +27,8 @@ def extract_troughput(filepaths,all_lists):
                         if match:
                             # attach the value to the var = latency
                             bandwith = float(match.group(1))
-                            #if bandwith > 70:
-                            #    bandwith = 60
-                            if bandwith > 0:
+                            
+                            if bandwith > 10:
                                 
                             
                             # append throughput to an list
@@ -217,7 +216,7 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
     axes[1].set_xlim(0, 100)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_ylim(0, 1)
     
     plt.legend(['UE1','UE2','UE3','UE4','UE5'],loc="upper right")
     fig.savefig("../Pictures/BW_5UE.png")
@@ -229,11 +228,11 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     print(s1.describe(), s2.describe(), s3.describe(),s4.describe(),s5.describe())
 
 file_paths=[
-'../txtfiles/5UEWFa.txt',
-'../txtfiles/5UEWFb.txt',
-'../txtfiles/5UEWFc.txt',
-'../txtfiles/5UEWFd.txt',
-'../txtfiles/5UEWFe.txt'     
+'../txtfiles/5UE5Ge.txt',
+'../txtfiles/5UE5Gb.txt',
+'../txtfiles/5UE5Gc.txt',
+'../txtfiles/5UE5Gd.txt',
+'../txtfiles/5UE5Ga.txt'     
 ]
 
 all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]

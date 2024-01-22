@@ -8,11 +8,11 @@ import seaborn as sns
 from scipy.stats import gaussian_kde
 
 
-latency_list1=[]
-latency_list2=[]
-latency_list3=[]
-latency_list4=[]
-latency_list5=[]
+bandwith_list1=[]
+bandwith_list2=[]
+bandwith_list3=[]
+bandwith_list4=[]
+bandwith_list5=[]
 
 
 
@@ -23,15 +23,13 @@ def extract_troughput(filepaths,all_lists):
                     lines = file.readlines()
                     for i, line in enumerate(lines, start=1):
                         # i dont know, google it. filters the bandwith part out of the ping.txt file
-                        match = re.search(r"time=(\d+\.?\d*)", line)
-                        
-                        
+                        match = re.search(r'(\d+(\.\d+)?)\s(M|)bits/sec', line)
                         if match:
                             # attach the value to the var = latency
-                            latency = float(match.group(1))
-                            if latency > 0:
+                            bandwith = float(match.group(1))
+                            if bandwith > 0:
                             # append throughput to an list
-                                current_list.append(latency)
+                                current_list.append(bandwith)
                         
     
                     del current_list[-2:]
@@ -91,23 +89,18 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s1 = pd.Series(bandwith_list1)
     s2 = pd.Series(bandwith_list2)
     s3 = pd.Series(bandwith_list3)
-    fig, axes = plt.subplots(1, 2,figsize=(10,6))
+    fig, axes = plt.subplots(figsize=(10,6))
 
-    # configuration of plot 1 
-    s1.plot(ax=axes[0],kind='line')
-    s2.plot(ax=axes[0],kind='line')
-    s3.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
+   
     
 
     #configuration of plot 2
-    s1.plot(ax=axes[1],kind='kde')
-    s2.plot(ax=axes[1],kind='kde')
-    s3.plot(ax=axes[1],kind='kde')
+    s1.plot(kind='kde')
+    s2.plot(kind='kde')
+    s3.plot(kind='kde')
     
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
+    plt.xlabel('Throughput in Mbit/s')
+    plt.ylabel('Density')
     plt.xlim(20, 130)
     plt.legend(['UE1','UE2','UE3'],loc="upper right")
     fig.savefig("../Pictures/Bandwith_iperf.pdf")
@@ -122,40 +115,32 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     s2 = pd.Series(bandwith_list2)
     s3 = pd.Series(bandwith_list3)
     s4 = pd.Series(bandwith_list4)
-    fig, axes = plt.subplots(1, 2,figsize=(10,6))
+    fig, axes = plt.subplots(figsize=(10,6))
 
-    # configuration of plot 1 
-    s1.plot(ax=axes[0],kind='line')
-    s2.plot(ax=axes[0],kind='line')
-    s3.plot(ax=axes[0],kind='line')
-    s4.plot(ax=axes[0],kind='line')
-    axes[0].set_xlabel('Time in s')
-    axes[0].set_ylabel('Throughput in Mbit/s')
-    
-
+   
     #configuration of plot 2
-    s1.plot(ax=axes[1],kind='kde')
-    s2.plot(ax=axes[1],kind='kde')
-    s3.plot(ax=axes[1],kind='kde')
-    s4.plot(ax=axes[1],kind='kde')
+    s1.plot(kind='kde')
+    s2.plot(kind='kde')
+    s3.plot(kind='kde')
+    s4.plot(kind='kde')
 
-    axes[1].set_xlabel('Throughput in Mbit/s')
-    axes[1].set_ylabel('Density')
-    plt.xlim(0, 130)
+    plt.xlabel('Throughput in Mbit/s')
+    plt.ylabel('Density')
+    plt.xlim(0, 140)
     plt.legend(['UE1','UE2','UE3','UE4'],loc="upper right")
     fig.savefig("../Pictures/Bandwith_iperf.pdf")
     
 
    
 
-    print(s1.describe(), s2.describe(), s3.describe(),s4.describe())
+    print(s1.mean()+s2.mean()+s3.mean()+s4.mean())
 
-def pandas5(latency_list1,latency_list2,latency_list3,latency_list4,latency_list5):
-    s1 = pd.Series(latency_list1)
-    s2 = pd.Series(latency_list2)
-    s3 = pd.Series(latency_list3)
-    s4 = pd.Series(latency_list4)
-    s5 = pd.Series(latency_list5)
+def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5):
+    s1 = pd.Series(bandwith_list1)
+    s2 = pd.Series(bandwith_list2)
+    s3 = pd.Series(bandwith_list3)
+    s4 = pd.Series(bandwith_list4)
+    s5 = pd.Series(bandwith_list5)
     fig, axes = plt.subplots(figsize=(10,6))
 
     # # configuration of plot 1 
@@ -174,28 +159,26 @@ def pandas5(latency_list1,latency_list2,latency_list3,latency_list4,latency_list
     s3.plot(kind='kde')
     s4.plot(kind='kde')
     s5.plot(kind='kde')
-    plt.xlabel('Latency in ms', color='black')
-    plt.ylabel('Density', color = 'black')
-    plt.tick_params(axis='x', colors='black')
-    plt.tick_params(axis='y', colors='black')
-    plt.xlim(0, 200)
-    plt.ylim(0,0.35)
-    plt.legend(['1 UE','2 UEs','3 UEs','4 UEs','5 UEs'],loc="upper right")
-    fig.savefig("../Pictures/Latency_sum.pdf")
-    fig.savefig("../Pictures/Latency_sum.png")
+    plt.xlabel('Throughput in Mbit/s')
+    plt.ylabel('Density')
+    plt.xlim(0, 100)
+    plt.legend(['UE1','UE2','UE3','UE4','UE5'],loc="upper right")
+    fig.savefig("../Pictures/Bandwith_iperf.pdf")
+    
+
    
 
-    print(s1.describe(), s2.describe(), s3.describe(),s4.describe(),s5.describe())
+    print(s1.mean()+s2.mean()+s3.mean()+s4.mean()+s5.mean())
 
 file_paths=[
-'../txtfiles/ping225.txt',
-'../txtfiles/ping112.txt',
-'../txtfiles/ping83.txt',
-'../txtfiles/ping56.txt',
-'../txtfiles/ping.txt'     
+'../1.txt',
+'../2.txt',
+'../3.txt',
+'../4.txt',
+'../5.txt'     
 ]
 
-all_lists=[latency_list1,latency_list2,latency_list3,latency_list4,latency_list5]
+all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]
 #extract_mbits_per_sec1(file_path1)
 #extract_mbits_per_sec2(file_path2)
 #extract_mbits_per_sec3(file_path3)
@@ -204,5 +187,5 @@ extract_troughput(file_paths,all_lists)
 #pandas2(bandwith_list1,bandwith_list2)
 #pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
 #pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4)
-pandas5(latency_list1,latency_list2,latency_list3,latency_list4,latency_list5)
+pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5)
 
