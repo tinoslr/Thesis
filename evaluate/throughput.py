@@ -27,12 +27,12 @@ def extract_troughput(filepaths,all_lists):
                         if match:
                             # attach the value to the var = latency
                             bandwith = float(match.group(1))
-                            
-                            if bandwith > 10:
-                                
+                            current_list.append(bandwith)
+                            #if bandwith > 10:
+                        
                             
                             # append throughput to an list
-                                current_list.append(bandwith)
+                            
                         
     
                     del current_list[-2:]
@@ -228,11 +228,11 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     print(s1.describe(), s2.describe(), s3.describe(),s4.describe(),s5.describe())
 
 file_paths=[
-'../txtfiles/5UE5Ge.txt',
-'../txtfiles/5UE5Gb.txt',
-'../txtfiles/5UE5Gc.txt',
-'../txtfiles/5UE5Gd.txt',
-'../txtfiles/5UE5Ga.txt'     
+'../txtfiles/5m.txt',
+'../txtfiles/15m.txt',
+'../txtfiles/30m2.txt',
+'../txtfiles/40m2.txt',
+'../txtfiles/50m2.txt'     
 ]
 
 all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]
