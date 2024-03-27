@@ -10,8 +10,8 @@ from scipy.stats import gaussian_kde
 
 
 file_paths=[
-'../txtfiles/ping225.txt',
-'../txtfiles/ping5G1.txt',
+'../txtfiles/ping56.txt',
+'../txtfiles/ping5G_100.txt',
 '../txtfiles/ping.txt',
 '../txtfiles/ping5.txt',
 '../MA5eUE.txt'     
@@ -103,5 +103,5 @@ def subpandas(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
 
 
 extract_troughput(file_paths,all_lists)
-#pandas(bandwith_list1,bandwith_list2)
-subpandas(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4)
+pandas(bandwith_list1,bandwith_list2)
+#subpandas(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4)

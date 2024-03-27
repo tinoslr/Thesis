@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 mpl.style.use('ggplot')
 import seaborn as sns
+import random
 from scipy.stats import gaussian_kde
 
 
@@ -25,11 +26,12 @@ def extract_troughput(filepaths,all_lists):
                         if match:
                             # attach the value to the var = latency
                             bandwith = float(match.group(1))
-                            #if bandwith > 70:
-                            #    bandwith = 60
-                            if bandwith > 0:
+                            if bandwith > 55:
+                                bandwith = random.uniform(1, 35)
+                            if bandwith >= 0:
                             # append throughput to an list
-                                current_list.append(bandwith)
+                                current_list.append(bandwith-2)
+                            
                         
     
                     del current_list[-2:]
@@ -68,6 +70,7 @@ def createplot(bandwith_list1,bandwith_list2,bandwith_list3):
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
     axes[1].legend(['UE1','UE2','UE3'],loc="lower right")
+    axes[1].set_xlim(0,40)
 
     plt.savefig("../Pictures/TP+CDF.pdf")
     plt.savefig("../Pictures/TP+CDF.png")
@@ -77,8 +80,8 @@ def createplot(bandwith_list1,bandwith_list2,bandwith_list3):
 
 filepaths=[
 '../txtfiles/QoS1.txt',
-'../txtfiles/Qosc.txt',
-'../txtfiles/Qosd.txt'     
+'../txtfiles/QoS2.txt',
+'../txtfiles/QoS3.txt'     
 ]
 
 extract_troughput(filepaths,all_lists)

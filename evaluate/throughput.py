@@ -4,7 +4,6 @@ import numpy as numpy
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 mpl.style.use('ggplot')
-import seaborn as sns
 from scipy.stats import gaussian_kde
 
 
@@ -14,6 +13,7 @@ bandwith_list3=[]
 bandwith_list4=[]
 bandwith_list5=[]
 
+all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]
 
 
 def extract_troughput(filepaths,all_lists):
@@ -27,15 +27,16 @@ def extract_troughput(filepaths,all_lists):
                         if match:
                             # attach the value to the var = latency
                             bandwith = float(match.group(1))
-                            current_list.append(bandwith)
-                            #if bandwith > 10:
-                        
                             
-                            # append throughput to an list
+                            if bandwith > 10:
+                                current_list.append(bandwith)
                             
+                             #append throughput to an list
+                           
                         
     
                     del current_list[-2:]
+
     except FileNotFoundError:
         print(f"Die Datei '{filepath}' wurde nicht gefunden.")                
     return 
@@ -216,7 +217,7 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
     axes[1].set_xlim(0, 100)
-    axes[1].set_ylim(0, 1)
+    axes[1].set_ylim(0, 0.4)
     
     plt.legend(['UE1','UE2','UE3','UE4','UE5'],loc="upper right")
     fig.savefig("../Pictures/BW_5UE.png")
@@ -228,18 +229,43 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     print(s1.describe(), s2.describe(), s3.describe(),s4.describe(),s5.describe())
 
 file_paths=[
-'../txtfiles/5m.txt',
-'../txtfiles/15m.txt',
-'../txtfiles/30m2.txt',
-'../txtfiles/40m2.txt',
-'../txtfiles/50m2.txt'     
+'../txtfiles/3UE5Ga.txt',
+'../txtfiles/3UE5Gb.txt',
+'../txtfiles/3UE5Gc.txt',
+'../txtfiles/5UE5Gd.txt',
+'../txtfiles/5UE5Ge.txt'     
 ]
 
-all_lists=[bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5]
+
+
+
+def perform_plotting(x):
+    nmb = {
+        1: pandas,
+        2: pandas2,
+        3: pandas3,
+        4: pandas4,
+        5: pandas5
+    }
+    lists = {
+        1: [bandwith_list1],
+        2: [bandwith_list1, bandwith_list2],
+        3: [bandwith_list1, bandwith_list2, bandwith_list3],
+        4: [bandwith_list1, bandwith_list2, bandwith_list3, bandwith_list4],
+        5: [bandwith_list1, bandwith_list2, bandwith_list3, bandwith_list4,bandwith_list5]
+    }
+    chosen_number_of_devices = nmb.get(x)
+    chosen_lists= lists.get(x)
+    chosen_number_of_devices(*chosen_lists)
+
+
+
+
+x_string = input("How many devices need to be plotted:")
+x = int(x_string)
+
+
 extract_troughput(file_paths,all_lists)
-#pandas(bandwith_list1)
-#pandas2(bandwith_list1,bandwith_list2)
-#pandas3(bandwith_list1,bandwith_list2,bandwith_list3)
-#pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4)
-pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5)
+perform_plotting(x)
+
 

@@ -10,7 +10,7 @@ mpl.style.use('ggplot')
 distance=[5,10,15,30,35]
 received_throughput=[225,180,150,30,0]
 distance2=[5,15,30,40,50]
-received_throughput2=[225,220,207,95,80]
+received_throughput2=[225,220,207,105,70]
 
 
 
