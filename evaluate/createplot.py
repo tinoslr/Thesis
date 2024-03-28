@@ -40,13 +40,17 @@ def perform_plotting(number_of_devices):
 
 
 
+
+
+
 # Input for number of devices     
-x = int(input('How many devices need to be plotted?'))
+x = int(input('How many devices need to be plotted? '))
 
 # create the file paths list 
-# store all txt-Files inside the txtfiles folder
+# store all txt-Files inside the txtfiles folder.
+# Enter the needed name of the file. Filetyp is not needed
 for i in range(x):
-    file_paths.append('../txtfiles/'+ input() + '.txt')
+    file_paths.append('../txtfiles/'+ input('Name of the txtfile ' + str(i+1) + ': ') + '.txt')
 
 # extracts the Throughput from each file
 extract(file_paths,all_lists)

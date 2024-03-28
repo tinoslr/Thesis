@@ -19,16 +19,17 @@ def pandas1(bandwith_list1):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    axes[0].set_ylim(190,290)
-
+    print('For your information: The min value is '+ str(s1.min()) + 'and the max value is '+ str(s1.max()))
+    axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
+    
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
     axes[1].set_xlabel('Throughput in Mbit/s',color='black')
     axes[1].set_ylabel('Density',color='black')
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
-    axes[1].set_xlim(180, 280)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_xlim(int(input('X-Min für KDE: ')),int(input('X-Max für KDE: ' )))
+    axes[1].set_ylim(int(input('Y-Min für KDE: ')), int(input('Y-Max für KDE: ' )))
 
     
     plt.legend(['UE1'],loc="upper right")
@@ -52,7 +53,7 @@ def pandas2(bandwith_list1,bandwith_list2):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    axes[0].set_ylim(40,150)
+    axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
     
 
     #configuration of plot 2
@@ -62,8 +63,8 @@ def pandas2(bandwith_list1,bandwith_list2):
     axes[1].set_ylabel('Density',color='black')
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
-    axes[1].set_xlim(40, 140)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_xlim(int(input('X-Min für KDE: ')),int(input('X-Max für KDE: ' )))
+    axes[1].set_ylim(int(input('Y-Min für KDE: ')), int(input('Y-Max für KDE: ' )))
 
     plt.legend(['UE1','UE2'],loc="upper right")
     fig.savefig("../Pictures/BW_2UE.png")
@@ -84,7 +85,7 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    axes[0].set_ylim(20,130)
+    axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
 
     
 
@@ -96,8 +97,8 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     axes[1].set_ylabel('Density',color='black')
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
-    axes[1].set_xlim(20, 120)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_xlim(int(input('X-Min für KDE: ')),int(input('X-Max für KDE: ' )))
+    axes[1].set_ylim(int(input('Y-Min für KDE: ')), int(input('Y-Max für KDE: ' )))
 
 
     
@@ -126,7 +127,7 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    axes[0].set_ylim(0,110)
+    axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
 
     #configuration of plot 2
     s1.plot(ax=axes[1],kind='kde')
@@ -137,8 +138,8 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     axes[1].set_ylabel('Density',color='black')
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
-    axes[1].set_xlim(0, 100)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_xlim(int(input('X-Min für KDE: ')),int(input('X-Max für KDE: ' )))
+    axes[1].set_ylim(int(input('Y-Min für KDE: ')), int(input('Y-Max für KDE: ' )))
 
 
     
@@ -169,7 +170,7 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    axes[0].set_ylim(0,110)
+    axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
     
 
     #configuration of plot 2
@@ -182,8 +183,8 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     axes[1].set_ylabel('Density',color='black')
     axes[1].tick_params(axis='x', colors='black')
     axes[1].tick_params(axis='y', colors='black')
-    axes[1].set_xlim(0, 100)
-    axes[1].set_ylim(0, 0.4)
+    axes[1].set_xlim(int(input('X-Min für KDE: ')),int(input('X-Max für KDE: ' )))
+    axes[1].set_ylim(int(input('Y-Min für KDE: ')), int(input('Y-Max für KDE: ' )))
     
     plt.legend(['UE1','UE2','UE3','UE4','UE5'],loc="upper right")
     fig.savefig("../Pictures/BW_5UE.png")
