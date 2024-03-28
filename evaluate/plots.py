@@ -19,7 +19,7 @@ def pandas1(bandwith_list1):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
-    print('For your information: The min value is '+ str(s1.min()) + 'and the max value is '+ str(s1.max()))
+    print('For your information: The min value is '+ str(s1.min()) + ' and the max value is '+ str(s1.max()))
     axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
     
     #configuration of plot 2
@@ -46,6 +46,10 @@ def pandas2(bandwith_list1,bandwith_list2):
     #create a plot with 2 subplots 
     fig, axes = plt.subplots(1, 2,figsize=(10,6))
 
+    minmaxlist=[s1.min(),s2.min(),s1.max(),s2.max()]
+    min_value = min(minmaxlist)
+    max_value = max(minmaxlist) 
+    
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
@@ -53,6 +57,7 @@ def pandas2(bandwith_list1,bandwith_list2):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
+    print('For your information: The min value is '+ str(min_value) + ' and the max value is '+ str(max_value))
     axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
     
 
@@ -77,6 +82,10 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     s3 = pd.Series(bandwith_list3)
     fig, axes = plt.subplots(1, 2,figsize=(10,6))
 
+    minmaxlist=[s1.min(),s2.min(),s3.min(),s1.max(),s2.max(),s3.max()]
+    min_value = min(minmaxlist)
+    max_value = max(minmaxlist) 
+
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
@@ -85,6 +94,7 @@ def pandas3(bandwith_list1,bandwith_list2,bandwith_list3):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
+    print('For your information: The min value is '+ str(min_value) + ' and the max value is '+ str(max_value))
     axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
 
     
@@ -118,6 +128,10 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     s4 = pd.Series(bandwith_list4)
     fig, axes = plt.subplots(1, 2,figsize=(10,6))
 
+    minmaxlist=[s1.min(),s2.min(),s3.min(),s4.min(),s1.max(),s2.max(),s3.max(),s4.max()]
+    min_value = min(minmaxlist)
+    max_value = max(minmaxlist) 
+
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
     s2.plot(ax=axes[0],kind='line')
@@ -127,6 +141,7 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
+    print('For your information: The min value is '+ str(min_value) + ' and the max value is '+ str(max_value))
     axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
 
     #configuration of plot 2
@@ -148,8 +163,6 @@ def pandas4(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4):
     fig.savefig("../Pictures/BW_4UE.pdf")
     
 
-   
-
     print(s1.describe(), s2.describe(), s3.describe(),s4.describe())
 
 def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith_list5):
@@ -159,6 +172,11 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     s4 = pd.Series(bandwith_list4)
     s5 = pd.Series(bandwith_list5)
     fig, axes = plt.subplots(1, 2,figsize=(10,6))
+
+    
+    minmaxlist=[s1.min(),s2.min(),s3.min(),s4.min(),s5.min(),s1.max(),s2.max(),s3.max(),s4.max(),s5.max()]
+    min_value = min(minmaxlist)
+    max_value = max(minmaxlist) 
 
     # configuration of plot 1 
     s1.plot(ax=axes[0],kind='line')
@@ -170,6 +188,7 @@ def pandas5(bandwith_list1,bandwith_list2,bandwith_list3,bandwith_list4,bandwith
     axes[0].set_ylabel('Throughput in Mbit/s',color='black')
     axes[0].tick_params(axis='x', colors='black')
     axes[0].tick_params(axis='y', colors='black')
+    print('For your information: The min value is '+ str(min_value) + ' and the max value is '+ str(max_value))
     axes[0].set_ylim(int(input('Y-Min für LinePlot: ')),int(input('Y-Max für Lineplot: ' )))
     
 
