@@ -3,13 +3,11 @@ import numpy as numpy
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 mpl.style.use('ggplot')
-import seaborn as sns
-from scipy.stats import gaussian_kde
+# from scipy.stats import gaussian_kde
 
 
 def pandas1(bandwith_list1):
     s1 = pd.Series(bandwith_list1)
-    print(s1)
    #create a plot with 2 subplots 
     fig, axes = plt.subplots(1, 2,figsize=(10,6))
 
